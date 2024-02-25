@@ -47,16 +47,3 @@ void print_stack(stack s)
         printf("%d ", s.items[i]);
 }
 
-int main()
-{
-    stack s;
-    s.top = -1;
-    push(&s, 1);
-    push(&s, 2);
-    push(&s, 3);
-    push(&s, 4);
-    push(&s, 5);
-    // printf("top - %d\n", s.top);
-    print_stack(s);
-    printf("\ntop ele is - %d", Peek(s));
-}
