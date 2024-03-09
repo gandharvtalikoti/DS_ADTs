@@ -66,22 +66,22 @@ int getItem(LinkedList *list, int n)
     return curr->data;
 }
 
-bool search(LinkedList *list, int key)
+int search(LinkedList *list, int key)
 {
     Node *curr = list->head;
     while (curr != NULL)
     {
         if (key == curr->data)
         {
-            return true;
+            return 1;
         }
 
         curr = curr->next;
     }
-    return false;
+    return 0;
 }
 
-void remove(LinkedList *list, int key)
+void removeItem(LinkedList *list, int key)
 {
     Node *curr = list->head;
     Node *prev;
@@ -102,13 +102,15 @@ void remove(LinkedList *list, int key)
         }
         prev = curr;
         curr = curr->next;
+        list->lenght--;
     }
     if (curr == NULL)
     {
         return;
     }
-
+    printf("\n item %d removed\n", curr->data);
     prev->next = curr->next;
+
     free(curr);
 }
 
@@ -125,9 +127,10 @@ int main()
     insertFront(list, 6);
 
     insertBack(list, 7);
-    insertBack(list, 7);
-    insertBack(list, 7);
-    insertBack(list, 7);
+    insertBack(list, 8);
+    insertBack(list, 9);
+    insertBack(list, 10);
+    removeItem(list, 5);
     printLinkedlist(list->head);
 
     printf("\nitem at pos - %d is %d", 3, getItem(list, 3));
