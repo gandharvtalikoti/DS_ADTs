@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 typedef struct Node
@@ -6,17 +6,22 @@ typedef struct Node
     int value;
     node *left;
     node *right;
-}node;
+} node;
 
 typedef struct Bst
 {
-    /* data */
     node *root;
-}Bst;
+} Bst;
 
+Bst *create_bst()
+{
+    Bst *bst;
+    bst->root = NULL;
+    return bst;
+}
 
 int main()
 {
-    
+
     return 0;
 }
